@@ -1,0 +1,92 @@
+{
+  "TRPV1_agonist": {
+    "aid": "540275",
+    "arm": "analgesic",
+    "description": "TRPV1 agonist (capsaicin class; 8% patch FDA-approved for DPN pain)"
+  },
+  "TRPV1_potentiator": {
+    "aid": "540277",
+    "arm": "analgesic",
+    "description": "TRPV1 potentiator"
+  },
+  "KCNQ2_potentiator": {
+    "aid": "2239",
+    "arm": "analgesic",
+    "description": "Kv7.2 opener (retigabine/flupirtine class)"
+  },
+  "KCNQ2_inhibitor": {
+    "aid": "2156",
+    "arm": "counterscreen",
+    "description": "Kv7.2 blocker (pro-excitatory; selectivity counter-screen)"
+  },
+  "K2P_activator": {
+    "aid": "623877",
+    "arm": "analgesic",
+    "description": "Two-pore K+ (TREK/TASK) activator"
+  },
+  "K2P_inhibitor": {
+    "aid": "602410",
+    "arm": "counterscreen",
+    "description": "Two-pore K+ channel inhibitor"
+  },
+  "K2P_inhibitor_2": {
+    "aid": "488922",
+    "arm": "counterscreen",
+    "description": "Two-pore K+ channel inhibitor (replicate assay)"
+  },
+  "TRP_agonist": {
+    "aid": "1424",
+    "arm": "analgesic",
+    "description": "Transient receptor potential agonist"
+  },
+  "NRF2_activator": {
+    "aid": "624171",
+    "arm": "neuroprotective",
+    "description": "Nrf2/ARE activator (oxidative-stress axis; ALA/curcumin MoA)"
+  },
+  "CHOP_inhibitor": {
+    "aid": "2732",
+    "arm": "neuroprotective",
+    "description": "CHOP inhibitor (ER-stress/UPR, Schwann-cell injury)"
+  },
+  "UPR_apoptotic": {
+    "aid": "449763",
+    "arm": "neuroprotective",
+    "description": "Activator, apoptotic arm of UPR"
+  },
+  "UPR_adaptive": {
+    "aid": "463104",
+    "arm": "neuroprotective",
+    "description": "Activator, adaptive arm of UPR"
+  },
+  "ERSR_agonist": {
+    "aid": "1159519",
+    "arm": "neuroprotective",
+    "description": "ER-stress response agonist"
+  },
+  "STEP_inhibitor": {
+    "aid": "588621",
+    "arm": "neuroprotective",
+    "description": "STriatal-Enriched Phosphatase inhibitor"
+  },
+  "BetaCell_protect": {
+    "aid": "435005",
+    "arm": "neuroprotective",
+    "description": "Inhibitor of beta-cell apoptosis"
+  },
+  "GLP1R_agonist": {
+    "aid": "624172",
+    "arm": "auxiliary",
+    "description": "GLP-1 receptor agonist"
+  },
+  "HKDC1_inhibitor": {
+    "aid": "493160",
+    "arm": "auxiliary",
+    "description": "Hexokinase-domain-containing-1 inhibitor"
+  },
+  "HKDC1_activator": {
+    "aid": "493187",
+    "arm": "auxiliary",
+    "description": "Hexokinase-domain-containing-1 activator"
+  }
+}

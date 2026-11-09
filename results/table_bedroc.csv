@@ -1,0 +1,16 @@
+arm,task,TanimotoKNN,LogReg_ECFP4,LightGBM_ECFP4,MTL_FCNN
+analgesic,K2P_activator,0.013,0.046,0.051,0.075
+analgesic,KCNQ2_potentiator,0.195,0.102,0.283,0.263
+analgesic,TRPV1_agonist,0.121,0.074,0.139,0.175
+analgesic,TRP_agonist,0.206,0.231,0.212,0.296
+auxiliary,HKDC1_activator,0.278,0.201,0.158,0.374
+auxiliary,HKDC1_inhibitor,0.213,0.204,0.356,0.407
+counterscreen,K2P_inhibitor,0.135,0.087,0.199,0.186
+counterscreen,K2P_inhibitor_2,0.162,0.134,0.271,0.253
+counterscreen,KCNQ2_inhibitor,0.124,0.141,0.197,0.223
+neuroprotective,BetaCell_protect,0.286,0.176,0.37,0.329
+neuroprotective,CHOP_inhibitor,0.191,0.167,0.243,0.242
+neuroprotective,NRF2_activator,0.187,0.231,0.317,0.309
+neuroprotective,STEP_inhibitor,0.202,0.105,0.228,0.236
+neuroprotective,UPR_adaptive,0.083,0.122,0.177,0.207
+neuroprotective,UPR_apoptotic,0.208,0.142,0.282,0.327

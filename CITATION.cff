@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "DPN-Bench: a mechanism-anchored molecular ML benchmark for painful diabetic neuropathy"
+message: "If you use this benchmark, please cite it and the underlying MolData dataset."
+type: software
+authors:
+  - name: "[Author]"
+license: MIT
+references:
+  - type: article
+    title: "MolData: a molecular benchmark for disease and target based machine learning"
+    authors:
+      - family-names: "Keshavarzi Arshadi"
+        given-names: "A."
+    journal: "Journal of Cheminformatics"
+    volume: 14
+    year: 2022
