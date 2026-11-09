@@ -3,7 +3,10 @@ title: "DPN-Bench: a mechanism-anchored molecular ML benchmark for painful diabe
 message: "If you use this benchmark, please cite it and the underlying MolData dataset."
 type: software
 authors:
-  - name: "[Author]"
+  - family-names: "Fathi"
+    given-names: "Alireza"
+    email: "alirezafathi84@gmail.com"
+    affiliation: "Department of Computer Engineering, NT.C., Islamic Azad University, Tehran, Iran"
 license: MIT
 references:
   - type: article
