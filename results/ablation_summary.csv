@@ -1,0 +1,6 @@
+task,arm,n_pos_train,ST_AUC,MT_AUC,ST_BEDROC,MT_BEDROC,ST_EF1,MT_EF1,dBEDROC,dAUC
+CHOP_inhibitor,neuroprotective,,0.806,0.801,0.243,0.242,7.879,7.469,-0.001,-0.005
+NRF2_activator,neuroprotective,,0.848,0.869,0.288,0.309,25.71,29.879,0.02,0.021
+STEP_inhibitor,neuroprotective,,0.798,0.82,0.218,0.236,20.014,21.92,0.018,0.022
+TRPV1_agonist,analgesic,,0.699,0.753,0.068,0.175,6.511,19.532,0.106,0.054
+TRP_agonist,analgesic,,0.732,0.815,0.255,0.296,29.566,29.566,0.041,0.082

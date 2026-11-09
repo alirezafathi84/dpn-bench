@@ -1,5 +1,7 @@
 # DPN-Bench: a mechanism-anchored molecular ML benchmark for painful diabetic neuropathy
 
+**Alireza Fathi** — Department of Computer Engineering, NT.C., Islamic Azad University, Tehran, Iran · alirezafathi84@gmail.com
+
 Multi-task virtual screening over 15 target endpoints chosen for their mechanistic
 link to diabetic peripheral neuropathic pain (DPNP), with a scaffold-split
 benchmark, a conformal-calibrated screen of guideline drugs and phytochemicals,
@@ -7,6 +9,30 @@ and an interference audit.
 
 Everything here was trained and evaluated end-to-end before release. No reported
 number is copied from a paper; all come from `results/`.
+
+## What is new here, and what is not
+
+Stated plainly so nothing is overclaimed. **Already established, and cited as such:**
+multi-task QSAR networks (Dahl et al. 2014; kinome-wide, *IJMS* 2024; docking-based,
+arXiv 2021); PAINS (Baell & Holloway 2010) and "invalid metabolic panaceas"
+(Bisson et al. 2016); the quercetin/flavonoid bias in natural-product network
+pharmacology, quantified across 258 studies in *Front. Pharmacol.* 2026 (quercetin
+the top metabolite in 62.8 % of them); conformal prediction for QSAR; scaffold
+splitting; the MolData collection used here; and computational screening of herbal
+formulae for diabetic neuropathy, which is a crowded field.
+
+**What this repository adds:**
+
+1. A **reusable benchmark selected by PDPN mechanism** rather than data availability,
+   with pro-excitatory counter-screens retained so selectivity can be measured.
+   Nearest analogue found: a 2026 structure-based TRPM8 benchmark — different channel,
+   different paradigm.
+2. A **controlled single-task vs multi-task ablation** (below) replacing the usual
+   unquantified "MTL helps" with a measured dependence on label abundance.
+3. The **interference audit promoted from retrospective critique to prospective
+   reporting standard**, with a conformal p-value and applicability-domain distance
+   on every scored row.
+4. A **quantified negative result** bounding fingerprint models on covalent mechanisms.
 
 ## Why these targets
 
@@ -57,6 +83,31 @@ Two findings worth keeping in view:
   ~300k made LightGBM both ~8x faster *and* better (NRF2: ROC-AUC 0.867 vs 0.796,
   EF1% 27.8 vs 19.5). The earlier full-data run was crippled by early stopping on
   a validation metric that misfires at 0.3 % prevalence.
+
+## Does multi-task learning actually help?
+
+Identical trunk (1038–512–128), optimiser, dropout and 13-epoch budget; only the
+number of heads and the training rows differ (`src/08_ablation.py`).
+
+| Task | Train positives | BEDROC single-task | BEDROC multi-task | Δ |
+|---|---|---|---|---|
+| TRP agonist | 305 | 0.255 | 0.296 | +0.041 |
+| TRPV1 agonist | 527 | 0.068 | **0.175** | **+0.106** |
+| STEP inhibitor | 708 | 0.218 | 0.236 | +0.018 |
+| Nrf2 activator | 982 | 0.288 | 0.309 | +0.020 |
+| CHOP inhibitor | 6,544 | 0.243 | 0.242 | −0.001 |
+
+**The transfer benefit scales inversely with label abundance.** On TRPV1 agonism
+(527 actives) task sharing lifts 1 % enrichment from 6.5-fold to 19.5-fold — a
+threefold gain in the only region of the ranking anyone inspects. On CHOP (6,544
+actives) it vanishes. This is the practical argument for disease-anchored panels:
+the mechanistically interesting PDPN targets are the under-screened ones, and they
+are the ones multi-task learning rescues. With abundant labels, use the simpler
+single-task model.
+
+Caveat: 5 of 15 tasks, chosen to span two orders of magnitude in label count rather
+than at random, with a shared epoch budget. A full-panel replication with per-task
+early stopping would strengthen it.
 
 ## Screen of guideline drugs and phytochemicals
 
@@ -134,6 +185,7 @@ python src/04_mtl.py --epochs 17
 python src/05_evaluate.py               # benchmark table
 python src/06_screen.py                 # library screen + conformal p-values
 python src/07_audit.py                  # PAINS / memorisation / promiscuity
+python src/08_ablation.py TRPV1_agonist CHOP_inhibitor   # single- vs multi-task
 ```
 
 The multi-task net is plain NumPy — no PyTorch, no GPU. It trains in ~12 s/epoch

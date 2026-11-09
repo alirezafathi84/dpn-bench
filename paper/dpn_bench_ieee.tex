@@ -11,9 +11,10 @@
 \title{DPN-Bench: A Mechanism-Anchored Multi-Task Benchmark and\\
 Audited Virtual Screen for Painful Diabetic Neuropathy}
 
-\author{\IEEEauthorblockN{[Author]}
-\IEEEauthorblockA{[Affiliation]\\
-[email]}}
+\author{\IEEEauthorblockN{Alireza Fathi}
+\IEEEauthorblockA{Department of Computer Engineering, NT.C.\\
+Islamic Azad University, Tehran, Iran\\
+alirezafathi84@gmail.com}}
 
 \maketitle
 
@@ -208,6 +209,16 @@ full-data configuration was degraded by early stopping on a validation metric
 that is unstable at 0.3\,\% prevalence. We report this because it is a trap
 rather than a trick.
 
+\section{Does Multi-Task Learning Help?}
+Multi-task QSAR is established~\cite{dahl,kinome}, so comparing our network to
+LightGBM would confound task sharing with the use of a neural network. We retrained
+the identical trunk, optimiser, dropout and epoch budget with a single head on each
+task's labelled rows alone. On TRPV1 agonism (527 training actives) task sharing
+raises BEDROC from 0.068 to 0.175 and EF1\,\% from 6.5 to 19.5; on STEP (708) and
+Nrf2 (982) the gain falls to ${\approx}{+}0.02$; on CHOP (6{,}544) it vanishes
+($-0.001$). The transfer benefit scales inversely with label abundance, which is
+the practical argument for disease-anchored panels around under-screened targets.
+
 \section{Benchmark Results}
 
 \begin{table}[t]
@@ -343,6 +354,11 @@ before training.
 \bibitem{pains} J. B. Baell and G. A. Holloway, ``New substructure filters for removal of pan assay interference compounds (PAINS) from screening libraries,'' \textit{J. Med. Chem.}, vol. 53, no. 7, pp. 2719--2740, 2010.
 \bibitem{baell} J. B. Baell and M. A. Walters, ``Chemistry: chemical con artists foil drug discovery,'' \textit{Nature}, vol. 513, pp. 481--483, 2014.
 \bibitem{conformal} V. Vovk, A. Gammerman, and G. Shafer, \textit{Algorithmic Learning in a Random World}. Springer, 2005.
+\bibitem{dahl} G. E. Dahl, N. Jaitly and R. Salakhutdinov, ``Multi-task neural networks for QSAR predictions,'' arXiv:1406.1231, 2014.
+\bibitem{kinome} ``Kinome-wide virtual screening by multi-task deep learning,'' \textit{Int. J. Mol. Sci.}, vol. 25, no. 5, 2538, 2024.
+\bibitem{bisson} J. Bisson \textit{et al.}, ``Can invalid bioactives undermine natural product-based drug discovery?,'' \textit{J. Med. Chem.}, vol. 59, no. 5, pp. 1671--1690, 2016.
+\bibitem{npbias} ``Homogeneity bias in natural product network pharmacology: a large-scale analysis,'' \textit{Front. Pharmacol.}, vol. 17, 1748478, 2026.
+\bibitem{trpm8} N. James \textit{et al.}, ``TRPM8 virtual screening: the essential role of target-specific, inactive-enriched machine-learning scoring functions,'' \textit{Digital Discovery}, 2026.
 \bibitem{rdkit} G. Landrum \textit{et al.}, ``RDKit: open-source cheminformatics,'' \url{https://www.rdkit.org}.
 \end{thebibliography}
 
